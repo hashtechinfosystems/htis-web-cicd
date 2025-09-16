@@ -5,7 +5,7 @@ metadata:
   namespace: htis-web-app
 spec:
   selector:
-    app: htis-web-app
+    app: htis-webapp
   type: NodePort
   ports:
     - protocol: TCP
