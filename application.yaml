@@ -8,7 +8,7 @@ spec:
   source:
     path: htis-web-app
     repoURL: https://github.com/hashtechinfosystems/htis-web-cicd.git
-    targetRevision: HEAD
+    targetRevision: main
   destination:
     namespace: htis-web-app
     server: https://kubernetes.default.svc
