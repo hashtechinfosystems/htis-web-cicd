@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: htis-webapp
-        image: htcl/htis-website:v1.0.0
+        image: htcl/htis-web:v1.0.1
         ports:
         - containerPort: 80
