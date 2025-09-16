@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     path: htis-web-app
-    repoURL: git@github.com:hashtechinfosystems/htis-web-cicd.git
+    repoURL: https://github.com/hashtechinfosystems/htis-web-cicd.git
     targetRevision: main
   destination:
     namespace: htis-web-app
