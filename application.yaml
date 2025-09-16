@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: htis-argo-application
+  namespace: argo-cd
+spec:
+  project: default
+  source:
+    path: htis-web-app
+    repoURL: git@github.com:hashtechinfosystems/htis-web-cicd.git
+    targetRevision: HEAD
+  destination:
+    namespace: htis-web-app
+    server: https://kubernetes.default.svc
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
