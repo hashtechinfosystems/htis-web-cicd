@@ -6,6 +6,7 @@ pipeline {
         REPO_NAME = 'htis-web-cicd'
         REPO_BRANCH = 'main'
         REPO_CREDS_ID = 'htis-git-ssh-cred'
+        BUILD_DIR = 'cicd'
         IMAGE_NAME = 'htcl/htis-web-app'
         IMAGE_TAG = 'v1.0.0'
         CONTAINER_NAME = 'htis-webapp'
@@ -21,6 +22,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh 'ls -la'
+                sh 'cd $BUILD_DIR'
                 sh 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
                 }
         }
