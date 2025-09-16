@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: htis-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: htis-webapp
+  template:
+    metadata:
+      labels:
+        app: htis-webapp
+    spec:
+      containers:
+      - name: htis-webapp
+        image: htcl/htis-website:v1.0.0
+        ports:
+        - containerPort: 80
