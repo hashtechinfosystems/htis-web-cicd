@@ -5,7 +5,7 @@ pipeline {
         REPO_URI = 'git@github.com:hashtechinfosystems/htis-web-cicd.git'
         REPO_NAME = 'htis-web-cicd'
         REPO_BRANCH = 'main'
-        REPO_CREDS_ID = 'jenkins-git-cred'
+        REPO_CREDS_ID = 'htis-git-ssh-cred'
         IMAGE_NAME = 'htcl/htis-web-app'
         IMAGE_TAG = 'v1.0.0'
         CONTAINER_NAME = 'htis-webapp'
@@ -21,8 +21,6 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh 'ls -la'
-                sh 'docker stop $CONTAINER_NAME'
-                sh 'docker rm $CONTAINER_NAME'
                 sh 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
                 }
         }
